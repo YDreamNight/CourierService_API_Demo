@@ -1,0 +1,559 @@
+
+<!-- saved from url=(0125)https://w-portalweb8.wtmec.com/Shipping/EXCreateIstructionList.do;jsessionid=A57486763B68186449025E95611B99C0?userID=Drimy.Go -->
+<!-- Only for Demonstrate-->
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=Big5">
+
+<title>Shipping Instruction</title>
+<link rel="stylesheet" href="./css/jquery-ui.min.css">
+<link href="./css/bootstrap(1).min.css" rel="stylesheet">
+
+<style>
+.transact {behavior: url(../js/TransactionTable.htc);}
+TD{
+  font-family: "Arial", "Helvetica", "sans-serif";
+  letter-spacing: 0px;
+  font-size: 12px;
+  text-decoration: none;
+}
+INPUT{
+  font-family: "Arial", "Helvetica", "sans-serif";
+  letter-spacing: 0px;
+  font-size: 11px;
+  text-decoration: none;
+}
+SELECT{
+  font-family: "Arial", "Helvetica", "sans-serif";
+  letter-spacing: 0px;
+  font-size: 10px;
+  text-decoration: none;
+}
+.FixedTitleRow{
+  position: relative;
+  top: expression(this.offsetParent.scrollTop-2);
+  z-index: 1;
+  background-color: #E6ECF0;
+}
+tbody tr:first-child {
+    inset-block-start: 0;
+    position: sticky;
+}
+
+
+</style>
+
+<script type="text/javascript">
+
+function selectordelall() {
+  var check_num = 5
+
+  if (document.getElementById("selectall").checked) {
+    for (var i = 1; i < check_num; i++) {
+      document.getElementById("Row_" + parseInt(i) + "_check").checked = true;
+    }
+  } else {
+    for(var i = 1; i < check_num; i++) {
+      document.getElementById("Row_" + parseInt(i) + "_check").checked=false;
+    }
+  }
+}
+
+function create_label() {
+  
+  if(document.getElementById("Row_1_check").checked && document.getElementById("Row_4_check").checked){
+    if(confirm("Different Ship-To Code, confirm to proceed?")){
+      window.location.href = "./page/Create_Label(Blank).html"
+    }else{
+      return
+    }
+  }
+  else if(document.getElementById("Row_1_check").checked){
+    window.location.href = "./page/Create_Label(Blank).html"
+  }else if(document.getElementById("Row_4_check").checked){
+    window.location.href = "./page/Create_Label(DAP).html"
+  }else {
+    Notification
+  }
+  
+}
+
+function confirm1(){
+  window.location.href = "./page/Create_SI.html"
+}
+
+
+</script>
+</head>
+
+<body leftmargin="0" rightmargin="0" topmargin="0" bottommargin="0" marginheight="0" marginwidth="0" bgcolor="#f5f4ff">
+<form name="fm" action="https://w-portalweb8.wtmec.com/PR/region_quotas.jsp" method="post">
+<input type="hidden" name="save" id="save" value="">
+  <table width="113%" height="538" align="center" cellpadding="0" cellspacing="0">
+    <tbody><tr>
+      <td height="536">
+        <table width="99%" height="24" cellpadding="0" cellspacing="0">
+          <tbody><tr>
+            <td height="18" colspan="6" valign="bottom" background="./Resources/top01.gif" width="993">
+              <font face="Geneva, Arial, Helvetica, san-serif" color="#FFFFFF" size="4"><b><i>
+              Shipping Instruction</i></b></font></td>
+          </tr>
+          <tr bgcolor="#FFF7F7">
+            <td height="2" colspan="6" width="993">
+             <input type="hidden" name="Transfer_Type" id="Transfer_Type" value="NORMAL">
+             <input type="hidden" name="SpecialProc_Type" id="SpecialProc_Type" value="NORMAL">
+            </td>
+          </tr>
+          <tr>
+            <td height="2" colspan="6" background="./Resources/top03.gif" width="993"></td>
+          </tr>
+        </tbody></table>
+        <table cellpadding="0" cellspacing="0" width="100%">
+          <tbody><tr>
+            <td height="410">
+              <div id="div1" style="border:1px groove #003366">
+                <table width="100%" height="442" bgcolor="#C5D5FE">
+                  <tbody><tr>
+                    <td height="436" valign="top">
+                      <div class="transact" id="trans1" addcount="1" delchkbox="delinternal" copychkbox="cp" row="11" style="height:435;overflow-y:auto">
+                        <table id="list" width="2000" border="1" cellpadding="1" cellspacing="1" bgcolor="#330066" height="97">
+                          <tbody><tr bgcolor="#000033" class="FixedTitleRow" height="10">
+                            <td width="20" height="16" align="center" bordercolor="#FFFFFF" bgcolor="#000000">
+                              <font color="#FFFFFF" face="Arial, Helvetica, sans-serif">
+                                <input type="checkbox" name="selectall" id="selectall" onclick="selectordelall();">
+                              </font>
+                            </td>
+                            <td width="25" align="center" bordercolor="#FFFFFF" bgcolor="#000000"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Line</font></td>
+                            <td width="" align="center" bordercolor="#FFFFFF" bgcolor="#000000"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Route</font></td>
+                            <td width="" align="center" bordercolor="#FFFFFF" bgcolor="#000000"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Delivery</font></td>
+                            <td width="" align="center" bordercolor="#FFFFFF" bgcolor="#000000"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">PDC DN</font></td>
+                            <td width="" align="center" bordercolor="#FFFFFF" bgcolor="#000000"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Order Type</font></td>
+                            <td width="" align="center" bordercolor="#FFFFFF" bgcolor="#000000"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Sales Company</font></td>
+                            <td width="" align="center" bordercolor="#FFFFFF" bgcolor="#000000"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Plant</font></td>
+                            <td width="" align="center" bordercolor="#FFFFFF" bgcolor="#000000"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">W/H</font></td>
+                            <td width="" align="center" bordercolor="#FFFFFF" bgcolor="#000000"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Stage Bin</font></td>
+                            <td width="" align="center" bordercolor="#FFFFFF" bgcolor="#000000"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">EWM Status</font></td>
+                            <td width="" align="center" bordercolor="#FFFFFF" bgcolor="#000000"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">ERP Status</font></td>
+                            <td width="" align="center" bordercolor="#FFFFFF" bgcolor="#000000"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Plan GI Date</font></td>
+                            <td width="" align="center" bordercolor="#FFFFFF" bgcolor="#000000"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">SoldTo Party</font></td>
+                            <td width="" align="center" bordercolor="#FFFFFF" bgcolor="#000000"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">ShipTo Party</font></td>
+                            <td width="" align="center" bordercolor="#FFFFFF" bgcolor="#000000"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">FDT Name</font></td>
+                            <td width="" align="center" bordercolor="#FFFFFF" bgcolor="#000000"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Create By</font></td>
+                            <td width="" align="center" bordercolor="#FFFFFF" bgcolor="#000000"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Shipment no</font></td>
+                            <td width="" align="center" bordercolor="#FFFFFF" bgcolor="#000000"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Shipping Doc status</font></td>
+                            <td width="" align="center" bordercolor="#FFFFFF" bgcolor="#000000"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Local/Export</font></td>
+                            <td width="" align="center" bordercolor="#FFFFFF" bgcolor="#000000"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Inco Terms</font></td>
+                            <td width="" align="center" bordercolor="#FFFFFF" bgcolor="#000000"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Inco Terms2</font></td>
+                            <td width="" align="center" bordercolor="#FFFFFF" bgcolor="#000000"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Export License</font></td>
+                            <td width="" align="center" bordercolor="#FFFFFF" bgcolor="#000000"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Cartons</font></td>
+                            <td width="" align="center" bordercolor="#FFFFFF" bgcolor="#000000"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Weight</font></td>
+                            <td width="" align="center" bordercolor="#FFFFFF" bgcolor="#000000"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Releated OB</font></td>
+                            <td width="" align="center" bordercolor="#FFFFFF" bgcolor="#000000"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Releated OB ERP Status</font></td>
+                            <td width="" align="center" bordercolor="#FFFFFF" bgcolor="#000000"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Packing NO.</font></td>
+                            <td width="" align="center" bordercolor="#FFFFFF" bgcolor="#000000"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Bonded Status</font></td>
+                            <td width="" align="center" bordercolor="#FFFFFF" bgcolor="#000000"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Prebook</font></td>
+                            <td width="" align="center" bordercolor="#FFFFFF" bgcolor="#a69b00"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">AWB No.</font></td>
+                            <td width="" align="center" bordercolor="#FFFFFF" bgcolor="#000000"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Reference NO.</font></td>
+                            <td width="" align="center" bordercolor="#FFFFFF" bgcolor="#000000"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">To Create Date</font></td>
+                            <td width="" align="center" bordercolor="#FFFFFF" bgcolor="#000000"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">To create Time</font></td>
+                            <td width="" align="center" bordercolor="#FFFFFF" bgcolor="#000000"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Delivery Date</font></td>
+                            <td width="" align="center" bordercolor="#FFFFFF" bgcolor="#000000"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Delivery Time</font></td>
+                            <td width="" align="center" bordercolor="#FFFFFF" bgcolor="#000000"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Urgent Request Time</font></td>
+                            <td width="" align="center" bordercolor="#FFFFFF" bgcolor="#000000"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Remark</font></td>
+                            <td width="" align="center" bordercolor="#FFFFFF" bgcolor="#000000"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Wave Release</font></td>
+                            <td width="" align="center" bordercolor="#FFFFFF" bgcolor="#000000"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Wave Complete Date</font></td>
+                            <td width="" align="center" bordercolor="#FFFFFF" bgcolor="#000000"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Need Booking</font></td>
+                            <td width="" align="center" bordercolor="#FFFFFF" bgcolor="#000000"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Trade Link</font></td>
+                            <td width="" align="center" bordercolor="#FFFFFF" bgcolor="#000000"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">New Billing</font></td>
+                          </tr>
+                          
+                          <!--Line 1-->
+                          <tr bgcolor="#E0EEFC">
+                            <td width="20" height="23" align="center"><input type="checkbox" name="Row_1_check" id="Row_1_check"></td>
+                            <td width="25" align="center"><font face="Arial, Helvetica, sans-serif">
+                              <input type="text" name="item_1" id="item_13" style="background-color: #CCCCCC;width:25px" value="1" readonly=""></font></td>
+                            <td width="" align="left"><font face="Arial, Helvetica, sans-serif">E13</font></td>
+                            <td width="" align="left"><font face="Arial, Helvetica, sans-serif">0090000001</font></td>
+                            <td width="" align="left"><font face="Arial, Helvetica, sans-serif">Z90000001</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">3006</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">HB03</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">SG1</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">SG</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">SG Stagging</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">TO</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">2026-02-01</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">TESTING SINGAPORE PTE LTD</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">TESTING SINGAPORE PTE LTD</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">EXPRESS DELIVERY</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">CSR</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">Export</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">EXW</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">SG</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">Not Required</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">1/1</font></td>
+                            <td width="" align="right"><font face="Arial, Helvetica, sans-serif">0.40</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">0000002</font></td>                           
+                            <td width=""><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width="" align="left"><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">2025-07-03</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">20:40:20</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">25-07-05</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">12:00:00</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">_00:00:00</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif"><img src="./Resources/search_on.gif" alt="Remark" onclick="openRemark(&#39;0093533883&#39;)" width="21" height="20" border="0" align="absmiddle"></font></td>
+                            <td width="" align="left"><font face="Arial, Helvetica, sans-serif">Y</font></td>
+                            <td width="" align="left"><font face="Arial, Helvetica, sans-serif">2025-07-04</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">N</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">N</font></td>
+                            <td width="" align="left"><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                          </tr>
+                          <!--Line 2-->
+                          <tr bgcolor="#E0EEFC">
+                            <td width="20" height="23" align="center"><input type="checkbox" name="Row_2_check" id="Row_2_check"></td>
+                            <td width="25" align="center"><font face="Arial, Helvetica, sans-serif">
+                              <input type="text" name="item_1" id="item_13" style="background-color: #CCCCCC;width:25px" value="2" readonly=""></font></td>
+                            <td width="" align="left"><font face="Arial, Helvetica, sans-serif">E13</font></td>
+                            <td width="" align="left"><font face="Arial, Helvetica, sans-serif">0090000002</font></td>
+                            <td width="" align="left"><font face="Arial, Helvetica, sans-serif">Z90000002</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">3006</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">HB03</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">SG1</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">SG</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">SG Stagging</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">TO</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">2026-02-01</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">TESTING SINGAPORE PTE LTD</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">TESTING SINGAPORE PTE LTD</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">EXPRESS DELIVERY</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">CSR</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">Export</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">EXW</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">SG</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">Not Required</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">1/1</font></td>
+                            <td width="" align="right"><font face="Arial, Helvetica, sans-serif">0.70</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">0000002</font></td>                           
+                            <td width=""><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width="" align="left"><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">2025-07-03</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">20:40:20</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">25-07-05</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">12:00:00</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">_00:00:00</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif"><img src="./Resources/search_on.gif" alt="Remark" onclick="openRemark(&#39;0093533883&#39;)" width="21" height="20" border="0" align="absmiddle"></font></td>
+                            <td width="" align="left"><font face="Arial, Helvetica, sans-serif">Y</font></td>
+                            <td width="" align="left"><font face="Arial, Helvetica, sans-serif">2025-07-04</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">N</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">N</font></td>
+                            <td width="" align="left"><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                          </tr>
+                          <!--Line 3-->
+                          <tr bgcolor="#E0EEFC">
+                            <td width="20" height="23" align="center"><input type="checkbox" name="Row_3_check" id="Row_3_check"></td>
+                            <td width="25" align="center"><font face="Arial, Helvetica, sans-serif">
+                              <input type="text" name="item_1" id="item_13" style="background-color: #CCCCCC;width:25px" value="3" readonly=""></font></td>
+                            <td width="" align="left"><font face="Arial, Helvetica, sans-serif">E13</font></td>
+                            <td width="" align="left"><font face="Arial, Helvetica, sans-serif">0090000003</font></td>
+                            <td width="" align="left"><font face="Arial, Helvetica, sans-serif">Z90000003</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">3006</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">HB03</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">SG1</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">SG</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">SG Stagging</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">TO</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">2026-02-01</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">TESTING SINGAPORE PTE LTD</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">TESTING SINGAPORE PTE LTD</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">EXPRESS DELIVERY</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">CSR</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">Export</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">EXW</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">SG</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">Not Required</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">1/1</font></td>
+                            <td width="" align="right"><font face="Arial, Helvetica, sans-serif">5.8</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">0000003</font></td>                           
+                            <td width=""><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width="" align="left"><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">2025-07-03</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">20:40:20</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">25-07-05</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">12:00:00</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">_00:00:00</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif"><img src="./Resources/search_on.gif" alt="Remark" onclick="openRemark(&#39;0093533883&#39;)" width="21" height="20" border="0" align="absmiddle"></font></td>
+                            <td width="" align="left"><font face="Arial, Helvetica, sans-serif">Y</font></td>
+                            <td width="" align="left"><font face="Arial, Helvetica, sans-serif">2025-07-04</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">N</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">N</font></td>
+                            <td width="" align="left"><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                          </tr>
+                          <!--Line 4-->
+                          <tr bgcolor="#E0EEFC">
+                            <td width="20" height="23" align="center"><input type="checkbox" name="Row_4_check" id="Row_4_check"></td>
+                            <td width="25" align="center"><font face="Arial, Helvetica, sans-serif">
+                              <input type="text" name="item_1" id="item_13" style="background-color: #CCCCCC;width:25px" value="4" readonly=""></font></td>
+                            <td width="" align="left"><font face="Arial, Helvetica, sans-serif">E13</font></td>
+                            <td width="" align="left"><font face="Arial, Helvetica, sans-serif">0090000004</font></td>
+                            <td width="" align="left"><font face="Arial, Helvetica, sans-serif">Z90000004</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">3006</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">HB03</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">SG1</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">SG</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">SG Stagging</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">TO</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">2026-02-01</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">TESTING TAIWAN PTE LTD</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">TESTING TAIWAN PTE LTD</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">EXPRESS DELIVERY</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">CSR</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">Export</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">DAP</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">TW</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">Not Required</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">88/88</font></td>
+                            <td width="" align="right"><font face="Arial, Helvetica, sans-serif">188.80</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">0000004</font></td>                           
+                            <td width=""><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width="" align="left"><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">2025-07-03</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">20:40:20</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">25-07-05</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">12:00:00</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">_00:00:00</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif"><img src="./Resources/search_on.gif" alt="Remark" onclick="openRemark(&#39;0093533883&#39;)" width="21" height="20" border="0" align="absmiddle"></font></td>
+                            <td width="" align="left"><font face="Arial, Helvetica, sans-serif">Y</font></td>
+                            <td width="" align="left"><font face="Arial, Helvetica, sans-serif">2025-07-04</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">N</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">N</font></td>
+                            <td width="" align="left"><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                          </tr>
+                          <!--Line 5-->
+                          <tr bgcolor="#E0EEFC">
+                            <td width="20" height="23" align="center"><input type="checkbox" name="Row_4_check" id="Row_4_check"></td>
+                            <td width="25" align="center"><font face="Arial, Helvetica, sans-serif">
+                              <input type="text" name="item_1" id="item_13" style="background-color: #CCCCCC;width:25px" value="5" readonly=""></font></td>
+                            <td width="" align="left"><font face="Arial, Helvetica, sans-serif">E13</font></td>
+                            <td width="" align="left"><font face="Arial, Helvetica, sans-serif">0090000005</font></td>
+                            <td width="" align="left"><font face="Arial, Helvetica, sans-serif">Z90000005</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">3006</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">HB03</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">SG1</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">SG</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">SG Stagging</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">TO</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">2026-02-24</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">MALAYSIA SDN BHD</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">MALAYSIA SDN BHD</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">EXPRESS DELIVERY</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">CSR</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">Export</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">DAP</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">MY</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">Not Required</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">2/2</font></td>
+                            <td width="" align="right"><font face="Arial, Helvetica, sans-serif">2.10</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">0000005</font></td>                           
+                            <td width=""><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width="" align="left"><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">2026-02-03</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">20:40:20</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">26-02-05</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">12:00:00</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">_00:00:00</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif"><img src="./Resources/search_on.gif" alt="Remark" onclick="openRemark(&#39;0093533883&#39;)" width="21" height="20" border="0" align="absmiddle"></font></td>
+                            <td width="" align="left"><font face="Arial, Helvetica, sans-serif">Y</font></td>
+                            <td width="" align="left"><font face="Arial, Helvetica, sans-serif">2026-02-04</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">N</font></td>
+                            <td width=""><font face="Arial, Helvetica, sans-serif">N</font></td>
+                            <td width="" align="left"><font face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                          </tr>
+                        
+
+                        </tbody></table>
+                      </div>
+                    </td></tr>
+                </tbody></table>
+              </div>
+            </td>
+          </tr>
+        </tbody></table>
+        <table width="100%" height="62">
+          <tbody><tr>
+            <td width="100%" height="56"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody><tr>
+              <!-- �C�L�ﶵcheck box -->
+                <td>
+                    <input type="text" value="2025-07-04" name="PrintDate" id="PrintDate" size="10" class="hasDatepicker"><a href="javascript:;" id="showCal"><img src="./Resources/cal.gif" border="0"></a>
+                    <select id="qty" name="qty">
+                      <option>1</option>
+                      <option>2</option>
+                      <option selected="selected">3</option>
+                      <option>4</option>
+                      <option>5</option>
+                      <option>6</option>
+                      <option>7</option>
+                      <option>8</option>
+                      <option>9</option>
+                      <option>10</option>
+                    </select>Print QTY
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input id="otherShippingDoc" name="otherShippingDoc" type="checkbox">Other Shipping Doc
+                    <input id="deliveryNote" name="deliveryNote" type="checkbox">Delivery Note
+                    <input id="invoice" name="invoice" type="checkbox">Invoice
+                    <input id="packingList" name="packingList" type="checkbox">Packing List
+                    <input id="nlPackingList" name="nlPackingList" type="checkbox">Packing List(Foxconn)
+
+
+                    <select id="printer" name="printer">
+
+                      <option>HLC_AP7080_1</option>
+
+                      <option>HLC_AP7080_2</option>
+
+                      <option>HLC_AP7080_3</option>
+
+                      <option>HLC_AP7080_4</option>
+
+                      <option>HLC_4070_1</option>
+
+                      <option>HLC_C4471_1</option>
+
+                      <option>HLC_C4570_3</option>
+
+                      <option>TSW_AP2560</option>
+
+                      <option>SGP_OFFICE</option>
+
+                      <option>SGP_Logistics_2_N</option>
+
+                      <option>SGP_PDC</option>
+
+                      <option selected="selected">SGP_PDC2</option>
+
+                      <option>SGP_PDC3</option>
+
+                      <option>SGP_TOSHIBA</option>
+
+                      <option>SG_FAE</option>
+
+                      <option>SG_FINANCE</option>
+
+                      <option>SGP_OFFICE_N</option>
+
+                      <option>SGP_TOSHIBA_N</option>
+
+                      <option>SG_FAE_N</option>
+
+                      <option>SG_FINANCE_N</option>
+
+                      <option>SGP_Logistics_2</option>
+
+                      <option>NK_CanoniR6555_SH</option>
+
+                      <option>NK_CanoniR_ADV6555</option>
+
+                      <option>NK_CanoniR4035</option>
+
+                      <option>NK_CanoniR6555_WH_Others</option>
+
+                      <option>NK_Canon6860_SH1</option>
+
+                      <option>NK_Canon6860_SH2</option>
+
+                      <option>SHAPFAD289</option>
+
+                      <option>OFFICE_IT</option>
+
+                      <option>OFFICE_IE</option>
+
+                    </select>
+                    Select a Printer
+                </td>
+              </tr>
+              <tr>
+
+                <td height="28" valign="middle">HS Code for Invoice:
+                
+                    <input type="radio" name="hsCode" value="">W/O HS Code&nbsp;
+                    <input type="radio" name="hsCode" value="V" checked="">Vendor HS Code&nbsp;
+                
+                    &nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" id="showConsignee" name="showConsignee">Show Consignee&nbsp;
+                    <input type="checkbox" id="showMaterialGroupName" name="showMaterialGroupName">Show Material Group Name&nbsp;
+                </td>
+              </tr>
+              <tr>
+                <td width="100%" height="43" align="center">
+                  <div align="left">
+                    <img onclick="printDoc()" src="./Resources/print_f.gif" alt="Print Document" onmouseover="this.style.cursor=&#39;hand&#39;" onmouseout="this.style.cursor=&#39;default&#39;">
+                    <img src="./Resources/create_shipping_instruction.gif" onclick="confirm1()" onmouseover="this.style.cursor=&#39;hand&#39;" onmouseout="this.style.cursor=&#39;default&#39;">
+                    <img src="./Resources/Create_Label.gif" onclick="create_label()" onmouseover="this.style.cursor=&#39;hand&#39;" onmouseout="this.style.cursor=&#39;default&#39;">
+                    <img src="./Resources/print_tu_list.jpg" onclick="printTuList()" alt="Print TU List" onmouseover="this.style.cursor=&#39;hand&#39;" onmouseout="this.style.cursor=&#39;default&#39;">
+                    <img src="./Resources/print_invoice.gif" onclick="printInvoicePacking(&#39;Y&#39;);" onmouseover="this.style.cursor=&#39;hand&#39;" onmouseout="this.style.cursor=&#39;default&#39;">
+                    <img src="./Resources/print_packing_list.gif" onclick="printInvoicePacking(&#39;N&#39;);" onmouseover="this.style.cursor=&#39;hand&#39;" onmouseout="this.style.cursor=&#39;default&#39;">
+                    <img src="./Resources/foxconn_packing_list.gif" onclick="printInvoicePacking(&#39;P&#39;);" onmouseover="this.style.cursor=&#39;hand&#39;" onmouseout="this.style.cursor=&#39;default&#39;" style="cursor: default;">
+                    <img src="./Resources/new_billing.gif" onclick="doPreBilling();" onmouseover="this.style.cursor=&#39;hand&#39;" onmouseout="this.style.cursor=&#39;default&#39;">
+                    
+                        <img src="./Resources/prebook.gif" onclick="hkCollect();" onmouseover="this.style.cursor=&#39;hand&#39;" onmouseout="this.style.cursor=&#39;default&#39;">
+                        <img onclick="printTransferList()" src="./Resources/print_transfer_list.gif" alt="Print Transfer List" onmouseover="this.style.cursor=&#39;hand&#39;" onmouseout="this.style.cursor=&#39;default&#39;">
+                    
+                  </div>
+                </td>
+                <td width="588">&nbsp;</td>
+              </tr>
+              <tr>
+                 <td width="720" height="43" align="center">
+                  <div align="left">
+                    <img src="./Resources/toConfirmGiBilling.gif" onclick="toConfirmGiBilling();" onmouseover="this.style.cursor=&#39;hand&#39;" onmouseout="this.style.cursor=&#39;default&#39;">
+                    <img src="./Resources/urgent.gif" onclick="urgent();" onmouseover="this.style.cursor=&#39;hand&#39;" onmouseout="this.style.cursor=&#39;default&#39;">
+                    <img onclick="downloadToExcel()" src="./Resources/download.gif" alt="Download Selected Items To Excel" onmouseover="this.style.cursor=&#39;hand&#39;" onmouseout="this.style.cursor=&#39;default&#39;">
+                    <img src="./Resources/back.gif" onclick="history.back();" onmouseover="this.style.cursor=&#39;hand&#39;" onmouseout="this.style.cursor=&#39;default&#39;">
+                    <img src="./Resources/other_shipping_doc_pdf.png" onclick="sendMyShipmentToMail();" onmouseover="this.style.cursor=&#39;hand&#39;" onmouseout="this.style.cursor=&#39;default&#39;">
+                    
+                  </div>
+                </td>
+              </tr>
+            </tbody></table></td>
+          </tr>
+        </tbody></table>
+      </td>
+    </tr>
+  </tbody></table>
+</form>
+
+
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div></body></html>

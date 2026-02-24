@@ -1,0 +1,164 @@
+function openPortOrCity(shipType) {
+  var countryCode = '';
+  if (shipType.indexOf('shipFrom') >= 0) {
+    countryCode = document.getElementById('ship_form').value;
+  } else {
+    countryCode = document.getElementById("ship_to").value;
+  }
+  if (countryCode == '') {
+    alert('Ship from and Ship to required.');
+    return false;
+  }
+  
+  var inputValue = document.getElementById(shipType).value;
+
+  if (popupwin != null) {
+    popupwin.close();
+  }
+  var url = prefix1 + "/Window/WindowEquotationPortAndCity.jsp?countryCode=" + countryCode + "&shipType=" + shipType + "&id=" + shipType + "&inputValue=" + inputValue;
+  popupwin = window.open(url,'_blank','width=515, height=400,top=150,left=150,menubar=no,toolbar=no,location=no, directories=no,status=no, scrollbars=yes,resizable=no, help=no');
+}
+
+function checkInput(shipType) {
+	
+	var inputValue = document.getElementById(shipType).value;
+	
+	var countryCode = '';
+	if (shipType.indexOf('shipFrom') >= 0) {
+		countryCode = document.getElementById('ship_form').value;
+	} else {
+	    countryCode = document.getElementById("ship_to").value;
+	}
+	
+	if (countryCode == '') {
+	    alert('Ship from and Ship to required.');
+	    return false;
+	}
+	
+	if (inputValue == null || inputValue == "") {
+		return false;
+	}
+	
+	jQuery.ajax({
+      type: 'GET',
+      url: 'ExportInstructionQuotationAction.do',
+      data: 'shipType=' + shipType + '&inputValue=' + inputValue 
+      								+ '&countryCode=' + countryCode + '&t=' + Math.random(),
+      success: function(data) {
+    	if (data == "N") {
+    		openPortOrCity(shipType);
+    		document.getElementById(shipType).value = "";
+    		return false;
+    	}  
+//        $.unblockUI();
+      },
+      error: function(data) {
+        alert(data);
+//        $.unblockUI();
+      }
+    });
+	
+	
+}
+
+function changeCountry(countryCode, id) {
+  if (popupwin != null) {
+    popupwin.close();
+  }
+  var url = prefix1 + "/Window/WindowEquotationPortAndCity.jsp?countryCode=" + countryCode + "&shipType=" + id + "&id=" + id;
+  popupwin = window.open(url,'_blank','width=515, height=400,top=150,left=150,menubar=no,toolbar=no,location=no, directories=no,status=no, scrollbars=yes,resizable=no, help=no');
+}
+
+function calculate() {
+  var shipFromPort = document.getElementById('shipFromPort').value;
+  var shipFromCity = document.getElementById('shipFromCity').value;
+  var shipToPort = document.getElementById('shipToPort').value;
+  var shipToCity = document.getElementById('shipToCity').value;
+  var shippingTerm = document.getElementById('shipping_term').value;
+  var shipForm = document.getElementById('ship_form').value;
+  var shipTo = document.getElementById('ship_to').value;
+  var shippingType = document.getElementById('shipping_type').value;
+  var grossWeight = document.getElementById('GROSS_WEIGHT').value;
+  var dimensionWeight = document.getElementById('VOLUME_WEIGHT').value;
+  if (shippingType == '01') {
+    // AIR
+    if (shipFromPort == '' || shipFromCity == '' || shipToPort == '' || shipToCity == '' || shippingTerm == '' 
+      || changeableWeight == '' || changeableWeight == '0' || shipForm == '' || shipTo == '') {
+      alert('Ship From Port, Ship From City, Ship To Port, Ship To City, Shipping Term, Charg. Weight, Ship from, Ship to required.');
+      return false;
+    }
+  } else if (shippingType == '13') {
+    // FED EXPRESS
+    if (changeableWeight == '' || changeableWeight == '0' || shipForm == '' || shipTo == '') {
+      alert('Shipping Term, Charg. Weight, Ship from, Ship to required.');
+      return false;
+    }
+  }
+
+  if (popupwin != null) {
+    popupwin.close();
+  }
+  var url = prefix1 + "/Window/WindowEquotationCalculate.jsp?shipFromPort=" + shipFromPort 
+      + "&shipFromCity=" + shipFromCity + "&shipToPort=" + shipToPort + "&shipToCity=" + shipToCity 
+      + "&shippingTerm=" + shippingTerm + "&grossWeight=" + grossWeight + "&shipForm=" + shipForm + "&shipTo=" + shipTo + '&queryAir=' + (shippingType == '01')
+      + "&dimensionWeight=" + dimensionWeight ;
+  popupwin = window.open(url,'_blank','width=1200, height=500,menubar=no,toolbar=no,location=no, directories=no,status=no, scrollbars=yes,resizable=no, help=no');
+}
+
+// 只有AIR跟FED EXPRESS才會顯示要選取 E-Quotation 報價
+function changeShipType(shipType, ignoreSpan) {
+  var equotationTrs = document.getElementsByClassName('equotationClass');
+  if (shipType == '01' || shipType == '13') {
+    document.getElementById('forwarderImg').style.display = "none";
+    for (var i = 0; i < equotationTrs.length; i++) {
+      equotationTrs[i].style.display = "";
+    }
+    if (ignoreSpan) {
+      document.getElementById('ignoreQuotationSpan').style.display = "";
+    }
+  } else {
+    document.getElementById('forwarderImg').style.display = "";
+    for (var i = 0; i < equotationTrs.length; i++) {
+      equotationTrs[i].style.display = "none";
+    }
+    document.getElementById('shipFromPort').value = '';
+    document.getElementById('shipFromCity').value = '';
+    document.getElementById('shipToPort').value = '';
+    document.getElementById('shipToCity').value = '';
+    document.getElementById('quotationAmountTwd').value = '';
+    document.getElementById('quotationAmountUsd').value = '';
+    document.getElementById('quotationCurrency').value = '';
+
+    if (ignoreSpan) {
+      document.getElementById('ignoreQuotationSpan').style.display = "none";
+    }
+  }
+  clearForwarder();
+}
+
+function changeWeight() {
+  let dimWeight = document.getElementById('VOLUME_WEIGHT').value;
+  let grossWeight = document.getElementById('GROSS_WEIGHT').value;
+  let maxWeight = Math.max(dimWeight, grossWeight);
+  let changeableWeight = document.getElementById('changeableWeight').value;
+  if (!isNaN(maxWeight) && maxWeight != changeableWeight) {
+    document.getElementById('changeableWeight').value = maxWeight;
+    clearForwarder();
+  }
+}
+
+function clearForwarder() {
+  document.getElementById('forwarder').value = '';
+  document.getElementById('forwarder_name').value = '';
+  document.getElementById('quote_index').value = '';
+}
+
+function doIgnoreQuotation() {
+  if (document.getElementById('ignoreQuotation').checked) {
+    document.getElementById('forwarderImg').style.display = "";
+    changeShipType('99', false);
+  } else {
+    document.getElementById('forwarderImg').style.display = "none";
+    changeShipType('01', false);
+  }
+}

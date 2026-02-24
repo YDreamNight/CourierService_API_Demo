@@ -1,0 +1,567 @@
+
+<!-- saved from url=(0130)https://w-portalweb8.wtmec.com/Shipping/EXCreateIstruction.do;jsessionid=A57486763B68186449025E95611B99C0?length=2&userID=Drimy.Go -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<title>Create Instruction</title>
+<link href="./bootstrap(1).min.css" rel="stylesheet">
+<link rel="stylesheet" href="../css/export.css">
+<link rel="stylesheet" href="../css/jquery-ui.min.css">
+<link rel="stylesheet" href="../css/select2.min.css">
+<link rel="stylesheet" href="../css/select2-bootstrap.min.css">
+<link rel="stylesheet" href="../css/bootstrap-table.min.css">
+<link rel="stylesheet" href="../css/bootstrap-table-fixed-columns.css">
+<link rel="stylesheet" href="../css/myShipment.css">
+
+<script type="text/javascript" src="../Js/jquery-1.11.1.min(1).js.download"></script>
+<script type="text/javascript" src="../Js/jquery-ui.min.js.download"></script>
+<script type="text/javascript" src="../Js/App.js.download"></script>
+<script type="text/javascript" src="../Js/fixIE_v1.1.js.download"></script>
+<script language="JavaScript" src="../Js/prototype.js.download"></script>
+<script language="JavaScript" src="../Js/EX_Equotation.js.download"></script>
+<script type="text/javascript" src="../Js/bootstrap.min(1).js.download"></script>
+<script type="text/javascript" src="../Js/bootstrap-table.js.download"></script>
+<script type="text/javascript" src="../Js/bootstrap-table-fixed-columns.js.download"></script>
+<script type="text/javascript" src="../Js/bootbox.min(1).js.download"></script>
+<script type="text/javascript" src="../Js/select2.full-4.0.4.1.min.js.download"></script>
+<script type="text/javascript" src="../Js/wtmec.select2.min.js.download"></script>
+<script language="JavaScript" src="../Js/myShipment.js.download"></script>
+<script type="text/javascript" src="../Js/select2-builder.js.download"></script>
+
+<script language="JavaScript" type="text/JavaScript">
+
+function Confirm(){
+    window.location.href="./Email.html"
+  }
+
+</script>
+</head>
+
+
+<body leftmargin="0" rightmargin="0" topmargin="0" bottommargin="0" marginheight="0" marginwidth="0" bgcolor="#f5f4ff">
+  <form name="fm" action="https://w-portalweb8.wtmec.com/PR/region_quotas.jsp" method="post">
+    <input type="hidden" name="save" id="save" value="">
+    <input type="hidden" name="deliveryNum" id="deliveryNum" value="">
+    <table width="100%" cellpadding="0" cellspacing="0" align="center">
+      <tbody><tr>
+        <td height="100%">
+          <table width="100%" height="170" cellpadding="0" cellspacing="0">
+            <tbody><tr>
+              <td height="26" colspan="6" valign="bottom" background="../Resources/top01.gif">
+                <font face="Geneva, Arial, Helvetica, san-serif" color="#FFFFFF" size="4"><b><i>Shipping Instruction</i></b></font>
+              </td>
+            </tr>
+            <tr>
+              <td width="1%" background="../Resources/top02.gif"></td>
+              <td width="19%" valign="bottom" height="26" background="../Resources/top02.gif">
+                <img src="../Resources/main02.gif" width="7" height="7">
+                <font color="#990033"><b><font class="unnamed1">內部單號:</font></b></font>
+                <input type="hidden" name="doctype" value=""><input type="hidden" name="docnumber" value="">
+              </td>
+              <td width="17%" valign="bottom" height="26" background="../Resources/top02.gif">
+                <img src="../Resources/main02.gif" width="7" height="7">
+                <font color="#990033"><b><font class="unnamed1">Creator:
+                  Go Choon Hong (Drimy)<input type="hidden" name="creator" value="Drimy.Go" id="creator">
+                </font></b></font>
+                <input type="hidden" id="specialProcType" value="null">
+              </td>
+              <td width="23%" valign="bottom" height="26" background="../Resources/top02.gif">
+                <img src="../Resources/main02.gif" width="7" height="7">
+                <font color="#990033"><b><font class="unnamed1">建立日期</font><font class="unnamed1">   :
+                  2025-07-04<input type="hidden" name="docdate" value="2025-07-04">
+                </font></b></font>
+              </td>
+              <td width="18%" background="../Resources/top02.gif"></td>
+              <td width="16%" background="../Resources/top02.gif"></td>
+            </tr>
+            <tr>
+              <td background="../Resources/top02.gif"></td>
+              <td valign="bottom" height="30" background="../Resources/top02.gif">
+                <img src="../Resources/main02.gif" width="7" height="7">
+                <font color="#990033"><b><font class="unnamed1">Company:</font></b></font>
+                <select name="company" id="company" style="width:160px;">
+
+                  <option value="1001">1001 WT Taiwan</option>
+
+                  <option value="1003">1003 NuVision Taiwan</option>
+
+                  <option value="1005">1005 Morrihan Taiwan</option>
+
+                  <option value="1006">1006 VPIC Taiwan</option>
+
+                  <option value="1008">1008 Techmosa Taiwan</option>
+
+                  <option value="1011">1011 Maxtek Taiwan</option>
+
+                  <option value="1012">1012 HongTech</option>
+
+                  <option value="2001">2001 WT Hong Kong</option>
+
+                  <option value="2002">2002 Shanghai Welltech</option>
+
+                  <option value="2003">2003 Shenzhen Welltech</option>
+
+                  <option value="2004">2004 WT HK Branch</option>
+
+                  <option value="2005">2005 NuVision HK Branch</option>
+
+                  <option value="2006">2006 NuVision Shenzhen</option>
+
+                  <option value="2007">2007 WT SHANGHAI</option>
+
+                  <option value="2010">2010 WT TECHNOLOGY</option>
+
+                  <option value="2011">2011 Shanhai Shenzhen</option>
+
+                  <option value="2012">2012 CooMo Software Ltd.</option>
+
+                  <option value="2013">2013 SOLOMON QCE LIMITED</option>
+
+                  <option value="2014">2014 Morrihan Trading</option>
+
+                  <option value="2018">2018 TECHMOSA INTERNATION</option>
+
+                  <option value="2019" >2019 Morrihan HK Branch</option>
+
+                  <option value="2020">2020 WT SH P.FTZ</option>
+
+                  <option value="2021">2021 Maxtek HK Branch</option>
+
+                  <option value="2022">2022 HongTech HK Branch</option>
+
+                  <option value="2024">2024 SHK</option>
+
+                  <option value="2025">2025 SSZ</option>
+
+                  <option value="2026">2026 ESH</option>
+
+                  <option value="2027">2027 EHK</option>
+
+                  <option value="23NS">23NS Welltech(SZ) Nanshan</option>
+
+                  <option value="26SZ">26SZ ESH- SZ</option>
+
+                  <option value="27SU">27SU Shanghai Welltech</option>
+
+                  <option value="3002">3002 WT Malaysia</option>
+
+                  <option value="3005">3005 Morrihan Singapore</option>
+
+                  <option value="3006" selected="">3006 WT Singapore</option>
+
+                  <option value="3009">3009 WT India</option>
+
+                  <option value="3012">3012 EPS</option>
+
+                  <option value="3013">3013 PSS</option>
+
+                  <option value="3014">3014 EPV</option>
+
+                  <option value="3016">3016 EPI</option>
+
+                  <option value="3017">3017 PSS</option>
+
+                  <option value="4003">4003 WON CHANG</option>
+
+                  <option value="4005">4005 WT-NSU Korea</option>
+
+                  <option value="4006">4006 ANALOG WORLD CO.</option>
+
+                  <option value="4007">4007 Leader's Technology</option>
+
+                  <option value="6001">6001 Swift Trading</option>
+
+                  <option value="6002">6002 Able Wide</option>
+
+                  <option value="6003">6003 World Motion</option>
+
+                  <option value="6004">6004 Expert Intertrade Lt</option>
+
+                  <option value="6005">6005 PARAMOUNT TECHNOLOGY</option>
+
+                  <option value="6006">6006 TECHMOSA ELECTRONICS</option>
+
+                  <option value="6008">6008 Brillnics (HK) Limit</option>
+
+                  <option value="6009">6009 MPP-ANIUS</option>
+
+                  <option value="6010">6010 MPP-MEGA</option>
+
+                  <option value="6011">6011 Lacewood</option>
+
+                  <option value="7003">7003 Promising Investment</option>
+
+                  <option value="9001">9001 Vendor - TI</option>
+
+                  <option value="9005">9005 Vendor - NANYA</option>
+
+                  <option value="9006">9006 Facebook consign</option>
+
+                  <option value="9007">9007 EXCELPOINT SYSTEMS V</option>
+
+                </select>
+              </td>
+              <td valign="bottom" background="../Resources/top02.gif">
+                <img src="../Resources/main02.gif" width="7" height="7">
+                <font color="#990033" class="unnamed1"><b>Forwarder:</b></font>
+                <input type="text" name="forwardern" id="forwarder" value="Dimerco Express" size="8" readonly="">
+                <img src="../Resources/search_off.gif" id="forwarderImg" alt="Forwarder" width="21" height="20" border="0" onclick="openForwarder(&#39;forwarder_name&#39;)" onmouseover="this.style.cursor=&#39;hand&#39;" onmouseout="this.style.cursor=&#39;default&#39;" style="display:none">
+                <input type="hidden" name="quote_index" id="quote_index" value="">
+              </td>
+              <td valign="bottom" background="../Resources/top02.gif">
+                <img src="../Resources/main02.gif" width="7" height="7">
+                <font color="#990033"><b><font class="unnamed1">預定提貨時間:</font></b></font>
+                <input type="text" value="2025-07-04" name="delivery_time" id="delivery_time" size="10" class="hasDatepicker">
+                <a href="javascript:;" id="showCal"><img src="../Resources/cal.gif" border="0"></a>
+                <select name="delivery_time_noon" id="select5" class="form11" size="1">
+                  <option value="AM">AM</option>
+                  <option selected="" value="PM">PM</option>
+                </select>
+                <input name="delivery_time_hhmm" id="delivery_time_hhmm" type="text" value="01:30" size="2" maxlength="5" onblur="checkTime(&#39;delivery_time_hhmm&#39;)">
+              </td>
+              <td valign="bottom" background="../Resources/top02.gif"></td>
+              <td background="../Resources/top02.gif"></td>
+            </tr>
+            <tr>
+              <td background="../Resources/top02.gif"></td>
+              <td valign="bottom" height="25" background="../Resources/top02.gif">
+                <img src="../Resources/main02.gif" width="7" height="7">
+                <font color="#990033"><b><font class="unnamed1">Ship from:</font></b></font>
+                <input name="ship_form" id="ship_form" type="text" value="SG" size="6" readonly="">
+                <img src="../Resources/search_on.gif" alt="  åN X" width="21" height="20" border="0" onmouseover="this.style.cursor=&#39;hand&#39;" onmouseout="this.style.cursor=&#39;default&#39;" onclick="openLand(&#39;ship_form&#39;)">
+              </td>
+              <td valign="bottom" background="../Resources/top02.gif">
+                <img src="../Resources/main02.gif" width="7" height="7">
+                <font color="#990033"><b><font class="unnamed1">Ship to:</font></b></font>
+                <input name="ship_to" id="ship_to" type="text" value="TW" size="6" readonly="">
+                <img src="../Resources/search_on.gif" alt="  åN X" width="21" height="20" border="0" onmouseover="this.style.cursor=&#39;hand&#39;" onmouseout="this.style.cursor=&#39;default&#39;" onclick="openLand(&#39;ship_to&#39;)">
+              </td>
+              
+              <td valign="bottom" background="../Resources/top02.gif">
+                <img src="../Resources/main02.gif" width="7" height="7">
+                <font color="#990033"><b><font class="unnamed1">Track. No:</font></b></font>
+                <input name="trackingnumber" id="trackingnumber" type="text" size="13" value="DIM023927314">
+              </td>
+              
+              <td background="../Resources/top02.gif">
+                <img src="../Resources/main02.gif" width="7" height="7">
+                <font color="#990033"><b><font class="unnamed1">Shipping Type:</font></b></font>
+                <select name="shipping_type" id="shipping_type" class="form11" onchange="changeShipType(document.fm.shipping_type.value, true)">
+
+                <option value="01">AIR</option>
+
+                <option value="05">TRUCK</option>
+
+                <option value="11">SEA</option>
+
+                <option value="13">FED EXPRESS</option>
+
+                <option value="99">VIRTUAL PROCESS</option>
+
+                </select>
+                <span id="ignoreQuotationSpan">
+                  <font color="#990033"><b><font class="unnamed1">Ignore</font></b></font>
+                  <input type="checkbox" name="ignoreQuotation" id="ignoreQuotation" onclick="doIgnoreQuotation()">
+                </span>
+              </td>
+              <td valign="bottom" background="../Resources/top02.gif"></td>
+              <td background="../Resources/top02.gif"></td>
+            </tr>
+            
+            
+              
+              
+            <tr class="equotationClass">
+  <td height="27" background="../Resources/top02.gif"></td>
+  <td background="../Resources/top02.gif">
+    <img src="../Resources/main02.gif" height="7">
+    <font color="#990033" class="unnamed1"><b>Outgoing Port:</b></font>
+    <input type="text" id="shipFromPort" name="shipFromPort" size="6" value="SGSIN" onkeyup="this.value = this.value.toUpperCase();" onchange="checkInput(&#39;shipFromPort&#39;);">
+    <img src="../Resources/search_on.gif" alt="Ship From Port" width="21" height="20" border="0" align="absmiddle" onclick="openPortOrCity(&#39;shipFromPort&#39;)" onmouseover="this.style.cursor=&#39;hand&#39;" onmouseout="this.style.cursor=&#39;default&#39;">
+  </td>
+  <td background="../Resources/top02.gif">
+    <img src="../Resources/main02.gif" height="7">
+    <font color="#990033" class="unnamed1"><b>Outgoing City:</b></font>
+    <input type="text" id="shipFromCity" name="shipFromCity" size="6" value="SGSIN" onkeyup="this.value = this.value.toUpperCase();" onchange="checkInput(&#39;shipFromCity&#39;);">
+    <img src="../Resources/search_on.gif" alt="Ship From City" width="21" height="20" border="0" align="absmiddle" onclick="openPortOrCity(&#39;shipFromCity&#39;)" onmouseover="this.style.cursor=&#39;hand&#39;" onmouseout="this.style.cursor=&#39;default&#39;">
+  </td>
+  <td background="../Resources/top02.gif">
+    <img src="../Resources/main02.gif" height="7">
+    <font color="#990033" class="unnamed1"><b>Incoming Port:</b></font>
+    <input type="text" id="shipToPort" name="shipToPort" size="6" value="TWTPE" onkeyup="this.value = this.value.toUpperCase();" onchange="checkInput(&#39;shipToPort&#39;);">
+    <img src="../Resources/search_on.gif" alt="Ship To Port" width="21" height="20" border="0" align="absmiddle" onclick="openPortOrCity(&#39;shipToPort&#39;)" onmouseover="this.style.cursor=&#39;hand&#39;" onmouseout="this.style.cursor=&#39;default&#39;">
+  </td>
+  <td background="../Resources/top02.gif">
+    <img src="../Resources/main02.gif" height="7">
+    <font color="#990033" class="unnamed1"><b>Incoming City:</b></font>
+    <input type="text" id="shipToCity" name="shipToCity" size="6" value="TWTPE" onkeyup="this.value = this.value.toUpperCase();" onchange="checkInput(&#39;shipToCity&#39;);">
+    <img src="../Resources/search_on.gif" alt="Ship To City" width="21" height="20" border="0" align="absmiddle" onclick="openPortOrCity(&#39;shipToCity&#39;)" onmouseover="this.style.cursor=&#39;hand&#39;" onmouseout="this.style.cursor=&#39;default&#39;">
+  </td>
+  <td height="27" background="../Resources/top02.gif"></td>
+</tr>
+<tr class="equotationClass">
+  <td height="27" background="../Resources/top02.gif"></td>
+  <td background="../Resources/top02.gif">
+    <img src="../Resources/main02.gif" height="7">
+    <font color="#990033" class="unnamed1"><b>Select Quotation:</b></font>
+    <img src="./search_on.gif" alt="Calculate" width="21" height="20" border="0" align="absmiddle" onclick="calculate()" onmouseover="this.style.cursor=&#39;hand&#39;" onmouseout="this.style.cursor=&#39;default&#39;">
+  </td>
+  <td background="../Resources/top02.gif">
+    <img src="../Resources/main02.gif" height="7">
+    <font color="#990033" class="unnamed1"><b>Quotation Amount:</b></font>
+    <input type="text" id="quotationAmountTwd" name="quotationAmountTwd" size="8" value="230.54" readonly="">
+  </td>
+  <td background="../Resources/top02.gif">
+    <img src="../Resources/main02.gif" height="7">
+    <font color="#990033" class="unnamed1"><b>Quotation Currency:</b></font>
+    <input type="text" id="quotationCurrency" name="quotationCurrency" size="8" value="USD" readonly="">
+  </td>
+  <td background="../Resources/top02.gif">
+    <img src="../Resources/main02.gif" height="7">
+    <font color="#990033" class="unnamed1"><b>Quotation Amount(USD):</b></font>
+    <input type="text" id="quotationAmountUsd" name="quotationAmountUsd" size="8" value="230.54" readonly="">
+  </td>
+  <td background="../Resources/top02.gif"></td>
+</tr>
+            <tr>
+              <td background="../Resources/top02.gif"></td>
+              <td valign="bottom" height="27" background="../Resources/top02.gif">
+                <img src="../Resources/main02.gif" width="7" height="7">
+                <font color="#990033"><b><font class="unnamed1">Ship to Party:</font></b></font>
+                <input name="shiptoparty" id="shiptoparty" type="hidden" size="17" value="R000MH01">
+                <input name="shiptopartyName" id="shiptopartyName" type="text" size="17" value="TESTING TAIWAN PTE LTD">
+                <img src="../Resources/search_on.gif" alt="Ship-to Party" width="21" height="20" border="0" align="absmiddle" onclick="openShiptoParty(&#39;shiptoparty&#39;,&#39;shiptopartyName&#39;)" onmouseover="this.style.cursor=&#39;hand&#39;" onmouseout="this.style.cursor=&#39;default&#39;">
+              </td>
+              <td valign="bottom" background="../Resources/top02.gif">
+                <img src="../Resources/main02.gif" width="7" height="7">
+                <font color="#990033"><b><font class="unnamed1">ShiptoParty Country:</font></b></font>
+                <input name="shiptoparty_country" id="shiptoparty_country" type="text" value="TW" size="1">
+                <img src="../Resources/search_on.gif" alt="  åN X" width="21" height="20" border="0" onmouseover="this.style.cursor=&#39;hand&#39;" onmouseout="this.style.cursor=&#39;default&#39;" onclick="openLand(&#39;shiptoparty_country&#39;)" style="cursor: default;">
+              </td>
+              <td valign="bottom" background="../Resources/top02.gif">
+                <img src="../Resources/main02.gif" width="7" height="7">
+                <font color="#990033"><b><font class="unnamed1">Shipping Term: </font></b></font>
+                <input name="shipping_term" id="shipping_term" value="DAP" type="text" size="1" readonly="">
+                <img src="../Resources/search_off.gif" alt="Shipping Term" width="21" height="20" border="0" onclick="openShippingTerm(&#39;shipping_term&#39;)" onmouseover="this.style.cursor=&#39;hand&#39;" onmouseout="this.style.cursor=&#39;default&#39;">
+              </td>
+              <td valign="bottom" background="../Resources/top02.gif">
+              </td>
+              <td background="../Resources/top02.gif"></td>
+            </tr>
+            <tr>
+              <td background="../Resources/top02.gif"></td>
+              <td valign="bottom" height="27" background="../Resources/top02.gif">
+                <img src="../Resources/main02.gif" width="7" height="7">
+                <font color="#990033"><b><font class="unnamed1">Sold to Party:</font></b></font>
+                <input name="soldtoparty" id="soldtoparty" type="hidden" size="17" value="R000MH01">
+                <input name="soldtopartyName" id="soldtopartyName" type="text" size="17" value="TESTING TAIWAN PTE LTD">
+                <img src="../Resources/search_on.gif" alt="Sold-to Party" width="21" height="20" border="0" align="absmiddle" onclick="openSoldtoParty(&#39;soldtoparty&#39;,&#39;soldtopartyName&#39;)" onmouseover="this.style.cursor=&#39;hand&#39;" onmouseout="this.style.cursor=&#39;default&#39;">
+              </td>
+              <td valign="bottom" height="25" background="../Resources/top02.gif">
+                <img src="../Resources/main02.gif" width="7" height="7">
+                <font color="#990033"><b><font class="unnamed1">SoldtoParty Country:</font></b></font>
+                <input name="soldtoparty_country" id="soldtoparty_country" type="text" value="TW" size="1">
+                <img src="../Resources/search_on.gif" alt="  åN X" width="21" height="20" border="0" onmouseover="this.style.cursor=&#39;hand&#39;" onmouseout="this.style.cursor=&#39;default&#39;" onclick="openLand(&#39;soldtoparty_country&#39;)">
+              </td>
+              <td valign="bottom" background="../Resources/top02.gif">
+                <img src="../Resources/main02.gif" width="7" height="7">
+                <font color="#990033"><b><font class="unnamed1"> 聯絡人:</font></b></font>
+                <input name="contact_name" id="contact_name" type="text" value="Go Choon Hong (Drimy)" size="8">
+                <input name="contact" id="contact" type="hidden" value="Drimy.Go" size="8">
+                <img src="../Resources/search_on.gif" alt=" p   H" width="21" height="20" border="0" onmouseover="this.style.cursor=&#39;hand&#39;" onmouseout="this.style.cursor=&#39;default&#39;" onclick="openContact(&#39;contact&#39;,&#39;contact_name&#39;)">
+              </td>
+              <td background="../Resources/top02.gif"></td>
+              <td background="../Resources/top02.gif"></td>
+            </tr>
+            <tr>
+              <td background="../Resources/top02.gif"></td>
+              <td height="27" background="../Resources/top02.gif">
+                <img src="../Resources/main02.gif" width="7" height="7">
+                <font color="#990033"><b><font class="unnamed1">總件數::</font></b></font>
+                <input type="text" name="TOTAL_PACKAGE" id="TOTAL_PACKAGE" value="88" size="3">
+              </td>
+              <td background="../Resources/top02.gif">
+                <img src="../Resources/main02.gif" width="7" height="7">
+                <font color="#990033"><b><font class="unnamed1">總凈重:</font></b></font>
+                <input type="text" name="NWT" id="NWT" value="82.33" size="3">
+              </td>
+              <td background="../Resources/top02.gif">
+                <img src="../Resources/main02.gif" width="7" height="7">
+                <font color="#990033"><b><font class="unnamed1">總毛重:</font></b></font>
+                <input type="text" name="GROSS_WEIGHT" id="GROSS_WEIGHT" value="188.88" size="3" onchange="changeWeight()">
+              </td>
+              <td background="../Resources/top02.gif">
+                <img src="../Resources/main02.gif" width="7" height="7">
+                <font color="#990033"><b><font class="unnamed1">Charg. Weight:&nbsp;</font></b></font>
+                <input type="text" name="changeableWeight" id="changeableWeight" value="218.66" size="5" onchange="clearForwarder()">
+              </td>
+              <td background="../Resources/top02.gif"></td>
+            </tr>
+            <tr>
+             <td background="../Resources/top02.gif"></td>
+              <!-- s W   Volume Weight -->
+              <td background="../Resources/top02.gif">
+                <img src="../Resources/main02.gif" width="7" height="7">
+                <font color="#990033"><b><font class="unnamed1">DIM Weight:</font></b></font>
+                <input type="text" name="VOLUME_WEIGHT" id="VOLUME_WEIGHT" value="218.66" size="5" onchange="changeWeight()">
+              </td>
+              <td background="../Resources/top02.gif">
+                <img src="../Resources/main02.gif" width="7" height="7">
+                <font color="#990033"><b><font class="unnamed1">City:</font></b></font>
+                <input type="text" name="city" id="city" value="TAIPEI" size="15">
+              </td>
+              <td background="../Resources/top02.gif">
+                <img src="../Resources/main02.gif" width="7" height="7">
+                <font color="#990033"><b><font class="unnamed1">Trade Link:</font></b></font>
+                <select name="trade_link" id="trade_link">
+                  <option selected="selected">Y</option>
+                  <option>N</option>
+                </select>
+              </td>
+              
+              <td background="../Resources/top02.gif"></td>
+              <td valign="bottom" background="../Resources/top02.gif"></td>
+            </tr>
+
+            <tr>
+              <td height="2" colspan="6" background="../Resources/top03.gif"></td>
+            </tr>
+          </tbody></table>
+
+          <table cellpadding="0" cellspacing="0" width="100%" height="270">
+            <tbody><tr>
+              <td height="270">
+                <div id="div1" height="25%">
+                  <table width="100%" height="60%" bgcolor="#C5D5FE">
+                    <tbody><tr>
+                      <td height="270" valign="top">
+                        <div class="transact" id="trans1" addcount="1" delchkbox="delinternal" copychkbox="cp" row="11" style="width: 1000px; overflow: auto; cursor: default; display: inline; height:270px; overflow-y:auto; width:100%;">
+                        <input type="hidden" value="" name="mail" id="mail">
+                        <table id="RFQInputTable" width="1100" border="1" cellpadding="1" cellspacing="1" bgcolor="#330066" height="140">
+                          <tbody><tr bgcolor="#000033" class="FixedTitleRow">
+                            <td width="20" align="center" bordercolor="#FFFFFF" bgcolor="#000000" height="26">
+                              <font color="#FFFFFF" face="Arial, Helvetica, sans-serif"> 
+                              <input type="checkbox" name="selectall" id="selectall" onclick="selectordelall( );">
+                            </font></td>
+                            <td width="25" align="center" bordercolor="#FFFFFF" bgcolor="#000000" height="26">
+                                <font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Line</font></td>
+                            <td width="71" align="center" bordercolor="#FFFFFF" bgcolor="#000000" height="26">
+                                <font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Outbound Number</font></td>
+                            <td width="36" align="center" bordercolor="#FFFFFF" bgcolor="#000000" height="26">
+                                <font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Item </font></td>
+                            <td width="150" align="center" bordercolor="#FFFFFF" bgcolor="#000000" height="26">
+                                <font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Wt Material </font></td>
+                            <td width="150" align="center" bordercolor="#FFFFFF" bgcolor="#000000" height="26">
+                                <font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Vendor Material </font></td>
+                            <td width="158" align="center" bordercolor="#FFFFFF" bgcolor="#000000" height="26">
+                                <font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Material Group</font></td>
+                            <td width="140" align="center" bordercolor="#FFFFFF" bgcolor="#000000" height="26">
+                                <font color="#FFFFFF" face="Arial, Helvetica, sans-serif">CCC Code</font></td>
+                            <td width="140" align="center" bordercolor="#FFFFFF" bgcolor="#000000" height="26">
+                                <font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Material Name</font></td>
+                            <td width="100" align="center" bordercolor="#FFFFFF" bgcolor="#000000" height="26">
+                                <font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Brand</font></td>
+                            <td width="77" align="center" bordercolor="#FFFFFF" bgcolor="#000000" height="26">
+                                <font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Quantity</font></td>
+                            <td width="36" align="center" bordercolor="#FFFFFF" bgcolor="#000000" height="26">
+                                <font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Unit</font></td>
+                            <td width="50" align="center" bordercolor="#FFFFFF" bgcolor="#000000" height="26">
+                                <font color="#FFFFFF" face="Arial, Helvetica, sans-serif">單價</font></td>
+                            <td width="38" align="center" bordercolor="#FFFFFF" bgcolor="#000000" height="26">
+                                <font color="#FFFFFF" face="Arial, Helvetica, sans-serif">幣別</font></td>
+                            <td width="100" align="center" bordercolor="#FFFFFF" bgcolor="#000000" height="26">
+                                <font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Original</font></td>
+                            <td width="77" align="center" bordercolor="#FFFFFF" bgcolor="#000000" height="26">
+                                <font color="#FFFFFF" face="Arial, Helvetica, sans-serif">自取/送貨</font></td>
+                            <td width="68" align="center" bordercolor="#FFFFFF" bgcolor="#000000" height="26">
+                                <font color="#FFFFFF" face="Arial, Helvetica, sans-serif">ECCN</font></td>
+                          </tr>
+
+                          <tr bgcolor="#E0EEFC" height="20">
+                            <td height="28" align="center"> <input type="checkbox" name="che" id="cp_33">
+                              <input size="2" type="hidden" name="item_total_package" id="Row_1_item_total_package" value="1">
+                              <input size="2" type="hidden" name="item_nwt" id="Row_1_item_nwt" value="1.000">
+                              <input size="2" type="hidden" name="item_gross_weight" id="Row_1_item_gross_weight" value="4.100">
+                              <input type="hidden" name="route" id="Row_1_Route" value="E13">
+                              <input type="hidden" name="floor" id="Row_1_Floor" value="SG">
+                            </td>
+                            <td align="center" height="28"> <input type="text" name="line" id="item_33" style="background-color: #CCCCCC;width:25px" value="1" readonly=""> </td>
+                            <td height="28">90000004<input type="hidden" name="outboundNumber" id="Row_1_outboundNumber" value="93531442"></td>
+                            <td height="28">10<input type="hidden" name="item" id="Row_1_item" value="10"></td>
+                            <td height="28">ACPL-C870-500E<input type="hidden" name="material" id="Row_1_material" value="ACPL-C870-500E"></td>
+                            <td height="28">ACPL-C870-500E<input type="hidden" name="vendorMaterial" id="Row_1_vendorMaterial" value="ACPL-C870-500E"></td>
+                            <td height="28" style="white-space:nowrap;"><input type="text" size="1" name="materialgroup" id="Row_1_materialgroup" value="NP2"><img src="../Resources/search_on.gif" alt="Material Group" width="21" height="20" border="0" onmouseover="this.style.cursor=&#39;hand&#39;" onmouseout="this.style.cursor=&#39;default&#39;" onclick="openMaterialgroup(&#39;Row_1_materialgroup&#39;,&#39;Row_1_tariff&#39;,&#39;Row_1_material_name&#39;)"></td>
+                            <td height="28"> <input type="text" size="15" name="tariff" id="Row_1_tariff" value="8541.4900"></td>
+                            <td height="28"> <input type="text" size="15" name="material_name" id="Row_1_material_name" value="Other photosensitive semiconductor devices"></td>
+                            <td height="28"> <input type="text" size="15" name="brand" id="Row_1_brand" value="AVAGO"></td>
+                            <td height="28" align="right">12000<input type="hidden" name="quantity" id="Row_1_quantity" value="4000"></td>
+                            <td height="28">PC<input type="hidden" name="unit" id="Row_1_unit" value="PC"></td>
+
+                            <td height="28"><input type="text" name="unitPrice" id="Row_1_unitPrice" value="1.36000" size="2"><input type="hidden" name="outboundtype" id="Row_1_outboundtype" value=""></td>
+
+
+                            <td height="28">USD<input type="hidden" name="unitPriceCurrency" id="Row_1_unitPriceCurrency" value="USD"></td>
+
+                            <td height="28" align="center"><input type="text" name="original" id="Row_1_original" value="PHILIPPINES" size="2"></td>
+                            <td height="28">
+                              <select name="deliveryType" id="deliveryType" class="form11" size="1">
+                                <option value="1"> ۨ </option>
+                                <option value="2"> e f</option>
+                              </select>
+                            </td>
+                            <td height="28">
+                              <input type="hidden" name="eccnNeed" id="Row_1_eccnNeed" value="">
+                              <input type="hidden" size="15" name="plant" id="Row_1_plant" value="MB03">
+                            </td>
+                          </tr>
+                        
+                        </tbody></table>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody></table>
+              </div>
+            </td>
+          </tr>
+        </tbody></table>
+        <table width="100%" id="comment">
+          <tbody><tr bordercolor="#eeeeee">
+            <td width="10%" height="59" bordercolor="#eeeeee" bgcolor="#490093"><div align="center"><strong><font color="#ffffff">Comment</font></strong></div></td>
+            <td width="90%" bordercolor="#eeeeee" bgcolor="#CFCCC2"><textarea name="remark" cols="125" rows="3" wrap="virtual"></textarea></td>
+          </tr>
+          <tr>
+            <td height="64" colspan="2">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tbody><tr>
+                  <td><img onclick="addMulRow(document.fm.totalID.value)" src="../Resources/add_items.gif" alt="Add Items" onmouseover="this.style.cursor=&#39;hand&#39;" onmouseout="this.style.cursor=&#39;default&#39;">
+                    <input type="text" value="1" id="totalID" style="width:20px">
+                    <img onclick="DelRow()" src="../Resources/del.gif" alt="Del Items" onmouseover="this.style.cursor=&#39;hand&#39;" onmouseout="this.style.cursor=&#39;default&#39;">
+                  </td>
+                  <td width="680" align="right"></td>
+                </tr>
+                <tr>
+                  <td width="189" height="22" align="center"><div align="left">
+                    <img src="../Resources/save.gif" onclick="updateBtn();" onmouseover="this.style.cursor=&#39;hand&#39;" onmouseout="this.style.cursor=&#39;default&#39;">
+                    <img src="../Resources/picking_notice.gif" onclick="Confirm();" onmouseover="this.style.cursor=&#39;hand&#39;" onmouseout="this.style.cursor=&#39;default&#39;">
+                    </div>
+                  </td>
+                  <td width="800" align="right">
+                    <table>
+                      <tbody><tr>
+                        <td><img src="../Resources/print_shipping_documents.png" onclick="openPopup();" onmouseover="this.style.cursor=&#39;hand&#39;" onmouseout="this.style.cursor=&#39;default&#39;"></td>
+                        <td><img src="../Resources/print_invoice.gif" onclick="PrintInvoice_divide();" onmouseover="this.style.cursor=&#39;hand&#39;" onmouseout="this.style.cursor=&#39;default&#39;"></td>
+                        <td><img src="../Resources/print_packing_list.gif" onclick="PrintPacking_divide();" onmouseover="this.style.cursor=&#39;hand&#39;" onmouseout="this.style.cursor=&#39;default&#39;"></td>
+                      </tr>
+                    </tbody></table>
+                  </td>
+                </tr>
+              </tbody></table>
+            </td>
+          </tr>
+        </tbody></table>
+      </td>
+    </tr>
+  </tbody></table>
+</form>
+
+
+<style>div.loading_mask {  width: 100%;  height: 100%;    position: fixed;    background: #fff;    filter: alpha(opacity = 50);  opacity: 0.5;  _zoom: 1;  z-index: 9999;  top: 0;  left: 0;}div.loading_popup {  width: 100%;  height: 100%;  position: fixed;  top: 0;  overflow-y: auto;  z-index: 99999;}div.loading_popup .loading_content {  height: 80px;  width: 190px;  margin: -40px auto;  background: #f5f5f5;  box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);  position: relative;  top: 50%;  border-radius: 10px;}div.loading_popup .loading_content .loading_box {  padding: 20px 10px 0 10px;}div.loading_popup .loading_content .loading_box img {  display: block;  margin: 0px auto;}div.loading_popup .loading_content .loading_box p {  font-size: 15px;  color: #6e828c;  letter-spacing: 1px;  text-align: center;  padding: 15px 0 0 0;}<style></style><div style="display:none;" id="loadingPopup">  <div class="loading_mask"></div>  <div class="loading_popup">    <div class="loading_content">      <div class="loading_box">        <span class="glyphicon glyphicon-time"> </span> Please Wait        <div class="progress">          <div class="progress-bar progress-bar-striped active" style="width: 100%"></div>        </div>      </div>    </div>  </div></div><div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div></body></html>
